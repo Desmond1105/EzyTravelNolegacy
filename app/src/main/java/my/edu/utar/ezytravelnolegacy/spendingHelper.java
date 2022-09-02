@@ -5,8 +5,6 @@ public class spendingHelper {
     String tripName;
     String spendDescription;
     String spendAmount;
-
-
     String spendDate;
 
     public spendingHelper() {
@@ -16,6 +14,7 @@ public class spendingHelper {
         this.tripName = tripName;
         this.spendDescription = spendDescription;
         this.spendAmount = spendAmount;
+        this.spendDate = spendDate;
     }
 
 
@@ -43,5 +42,12 @@ public class spendingHelper {
         this.spendAmount = spendAmount;
     }
 
+    public String getSpendDate() {
+        return spendDate;
+    }
+
+    public void setSpendDate(String spendDate) {
+        this.spendDate = spendDate;
+    }
 
 }

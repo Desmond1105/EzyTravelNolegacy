@@ -1,228 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EAAC8B"
+    android:orientation="vertical"
     tools:context=".Checklist">
 
-    <TextView
-        android:id="@+id/textView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E56B6f"
-        android:gravity="center"
-        android:text="CheckList"
-        android:textColor="#000000"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="292dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toStartOf="@+id/check_btn"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/add_checklist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="44dp"
-        android:text="add"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
-
-    <Button
-        android:id="@+id/delete_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="44dp"
-        android:text="Delete"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toStartOf="@+id/add_button"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/add_checklist"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
-
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="411dp"
-        android:layout_height="359dp"
-        android:layout_marginBottom="156dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:id="@+id/checklist_layout"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="4dp"
+            android:background="#E56B6f"
+            android:gravity="center"
+            android:text="CheckList"
+            android:textColor="#000000"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/beauty_tv"
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp">
+
+            <Spinner
+                android:id="@+id/spinner3"
+                android:layout_width="292dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/check_btn"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/check_btn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Beauty"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="12dp"
+                android:text="Check"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.922"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView3"
+            android:layout_width="411dp"
+            android:layout_height="318dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_btn">
 
             <LinearLayout
-                android:id="@+id/beauty_ly"
+                android:id="@+id/checklist_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/beauty_tv2"
+                    android:id="@+id/beauty_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Beauty"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/beauty_ly"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/beauty_tv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/clothes_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Clothes"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/clothes_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/eyewear_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Glasses and EyeWear"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/eyewear_tv2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="*"
                     android:textSize="15sp" />
 
 
+                <TextView
+                    android:id="@+id/medi_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Medication"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/medi_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tech_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tech and Electronics"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tech_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/toi_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Toiletries"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/toi_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/doc_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Travel Document"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/doc_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textSize="15sp" />
             </LinearLayout>
 
+        </ScrollView>
 
-            <TextView
-                android:id="@+id/clothes_tv"
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <Button
+                android:id="@+id/add_checklist"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Clothes"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:text="add" />
 
-            <TextView
-                android:id="@+id/clothes_tv2"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/delete_btn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="*"
-                android:textSize="15sp" />
+                android:text="Delete" />
 
-            <TextView
-                android:id="@+id/eyewear_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Glasses and EyeWear"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+            <Space
+                android:layout_width="105dp"
+                android:layout_height="32dp"
+                android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/eyewear_tv2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="*"
-                android:textSize="15sp" />
-
-
-            <TextView
-                android:id="@+id/medi_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Medication"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/medi_tv2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="*"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/tech_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tech and Electronics"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tech_tv2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="*"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/toi_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Toiletries"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/toi_tv2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="*"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/doc_tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Travel Document"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/doc_tv2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="*"
-                android:textSize="15sp" />
+            <ImageButton
+                android:id="@+id/add_button"
+                android:layout_width="50dp"
+                android:layout_height="52dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="29dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/btn_background"
+                android:src="@drawable/button_image" />
         </LinearLayout>
 
-    </ScrollView>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/check_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
-        android:layout_marginBottom="52dp"
-        android:text="Check"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <ImageButton
-        android:id="@+id/add_button"
-        android:layout_width="61dp"
-        android:layout_height="63dp"
-        android:layout_gravity="right"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/btn_background"
-        android:src="@drawable/button_image"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.927"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -232,9 +240,6 @@
         app:itemBackground="@color/teal_700"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/btm_nav" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

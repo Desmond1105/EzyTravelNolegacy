@@ -46,26 +46,12 @@ public class Spending extends AppCompatActivity {
         EditText spendAmount = findViewById(R.id.spendAmount);
         EditText spendDes = findViewById(R.id.spendDescription);
         CalendarView spendDate = findViewById(R.id.calendarView);
+        Button checkSpending = findViewById(R.id.button);
 
-        //listener for calender
-        spendDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener(){
+        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+        String selectedDate = sdf.format(new Date(spendDate.getDate()));
 
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
 
-//                    String str_selectedDate= String.format("%04d.%02d.%02d", year, month + 1, day);
-//                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
-//                Date date = null;
-//                try {
-//                    date = sdf.parse(str_selectedDate);
-//                } catch (ParseException e) {
-//                    e.printStackTrace();
-//                }
-//                long millis = date.getTime();
-//                    spendDate.setDate(millis);
-
-            }
-        });
         addButton.setOnClickListener(new View.OnClickListener() { // add new card
             @Override
             public void onClick(View view) {
@@ -75,17 +61,22 @@ public class Spending extends AppCompatActivity {
                 String sName = spendList.getText().toString();
                 String sDescription = spendDes.getText().toString();
                 String sAmount = spendAmount.getText().toString();
-//                String sDate = spendDate.getDate();
-                String sDate ="belum";
+                String sDate = selectedDate;
 
                 spendingHelper helperClass= new spendingHelper(sName,sDescription,sAmount, sDate);
 
-                reference.child(sName).setValue(helperClass);
+                reference.child(sDate).setValue(helperClass);
                 Toast.makeText(Spending.this, "Added New Spending",Toast.LENGTH_LONG).show();
             }
         });
 
-
+        checkSpending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent checkSpend = new Intent(Spending.this, spendingTable.class);
+                startActivity(checkSpend);
+            }
+        });
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
