@@ -21,6 +21,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EzyTravelNolegacy">
         <activity
+            android:name=".ActivityForm"
+            android:exported="false" />
+        <activity
+            android:name=".PlanTrip"
+            android:exported="false" />
+        <activity
+            android:name=".TripActivity"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
@@ -28,9 +37,6 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".HuaweiMap"
             android:exported="false" />
         <activity
             android:name=".Checklist3"
@@ -66,6 +72,10 @@
         <meta-data
             android:name="com.huawei.hms.client.channel.androidMarket"
             android:value="false" />
+
+        <activity
+            android:name=".SupportMapDemoActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

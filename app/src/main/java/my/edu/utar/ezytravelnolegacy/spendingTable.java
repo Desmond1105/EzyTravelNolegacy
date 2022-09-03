@@ -149,7 +149,6 @@ public class spendingTable extends AppCompatActivity {
 
                 spendingHelper helperClass= new spendingHelper(sName,sDescription,sAmount, sDate);
 
-
                 mDatabase.child("Spending").child(helperClass.getTripName()).child(sDate)
                         .addValueEventListener(new ValueEventListener() {
                     @Override
@@ -219,7 +218,7 @@ public class spendingTable extends AppCompatActivity {
                         startActivity(int2);
                         return true;
                     case R.id.nav_planner:
-                        Intent int3 = new Intent(spendingTable.this, Planner.class);
+                        Intent int3 = new Intent(spendingTable.this, TripActivity.class);
                         startActivity(int3);
                         return true;
                 }

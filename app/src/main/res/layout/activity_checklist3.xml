@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#EAAC8B"
+    android:background="@drawable/checklist_back"
     tools:context=".Checklist3">
 
     <LinearLayout
@@ -19,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="13dp"
-            android:background="#E56B6f"
             android:gravity="center"
             android:text="*"
             android:textColor="#000000"

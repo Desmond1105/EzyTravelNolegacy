@@ -91,7 +91,7 @@ public class Account extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_planner:
-                        Intent int1 = new Intent(Account.this, Planner.class);
+                        Intent int1 = new Intent(Account.this, TripActivity.class);
                         startActivity(int1);
                         return true;
                     case R.id.nav_account:

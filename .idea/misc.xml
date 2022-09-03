@@ -10,21 +10,27 @@
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1421875" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/drawable/ic_baseline_monetization_on_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/drawable/ic_planner.xml" value="0.22037037037037038" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/drawable/ic_spending.xml" value="0.23425925925925925" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/drawable/round_button.xml" value="0.22037037037037038" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/drawable/selector.xml" value="0.1" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/drawable/spinner_border.xml" value="0.1453125" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_account.xml" value="0.264" />
-        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_checklist.xml" value="0.4" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_checklist.xml" value="0.152" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_checklist2.xml" value="0.175" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_checklist3.xml" value="0.1609375" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_forgot_password.xml" value="0.1140625" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_form.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_huawei_map.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_hw_map.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_plan_trip.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_planner.xml" value="0.11614583333333334" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_register_user.xml" value="0.128125" />
-        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_spending.xml" value="0.2" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_spending.xml" value="0.264" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_spending_table.xml" value="0.264" />
-        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_user_profile.xml" value="0.128125" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_trip.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/activity_user_profile.xml" value="0.1" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/dropdown_item.xml" value="0.175" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/fragment_account.xml" value="0.1" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/fragment_accountv2.xml" value="0.11503623188405797" />
@@ -34,6 +40,7 @@
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/fragment_plannerv2.xml" value="0.11503623188405797" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/fragment_spending.xml" value="0.24295432458697766" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/fragment_spendingv2.xml" value="0.11503623188405797" />
+        <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/new_activitylist.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/layout/selected_item.xml" value="0.175" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/menu/btm_nav.xml" value="0.176" />
         <entry key="..\:/Users/rival/OneDrive/Documents/EzyTravelNolegacy/app/src/main/res/menu/menu_nav.xml" value="0.1" />

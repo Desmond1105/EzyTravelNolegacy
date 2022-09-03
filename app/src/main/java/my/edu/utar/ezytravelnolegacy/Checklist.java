@@ -115,7 +115,7 @@ public class Checklist extends AppCompatActivity {
                         startActivity(int1);
                         return true;
                     case R.id.nav_planner:
-                        Intent int2 = new Intent(Checklist.this, Planner.class);
+                        Intent int2 = new Intent(Checklist.this, TripActivity.class);
                         startActivity(int2);
                         return true;
                     case R.id.nav_spending:

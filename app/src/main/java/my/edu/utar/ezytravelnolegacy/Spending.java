@@ -117,7 +117,7 @@ public class Spending extends AppCompatActivity {
                         startActivity(int2);
                         return true;
                     case R.id.nav_planner:
-                        Intent int3 = new Intent(Spending.this, Planner.class);
+                        Intent int3 = new Intent(Spending.this, TripActivity.class);
                         startActivity(int3);
                         return true;
                 }

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EAAC8B"
+    android:background="@drawable/checklist_back"
     android:orientation="vertical"
     tools:context=".Checklist">
 
@@ -19,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:background="#E56B6f"
             android:gravity="center"
             android:text="CheckList"
             android:textColor="#000000"

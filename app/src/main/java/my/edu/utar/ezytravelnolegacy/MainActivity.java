@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(int3);
                         return true;
                     case R.id.nav_planner:
-                        Intent int4 = new Intent(MainActivity.this, Planner.class);
+                        Intent int4 = new Intent(MainActivity.this, TripActivity.class);
                         startActivity(int4);
                         return true;
                 }
