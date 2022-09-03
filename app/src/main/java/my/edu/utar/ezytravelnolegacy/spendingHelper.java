@@ -4,13 +4,13 @@ public class spendingHelper {
 
     String tripName;
     String spendDescription;
-    String spendAmount;
+    double spendAmount;
     String spendDate;
 
     public spendingHelper() {
     }
 
-    public spendingHelper(String tripName, String spendDescription, String spendAmount, String spendDate) {
+    public spendingHelper(String tripName, String spendDescription, double spendAmount, String spendDate) {
         this.tripName = tripName;
         this.spendDescription = spendDescription;
         this.spendAmount = spendAmount;
@@ -34,11 +34,11 @@ public class spendingHelper {
         this.spendDescription = spendDescription;
     }
 
-    public String getSpendAmount() {
+    public double getSpendAmount() {
         return spendAmount;
     }
 
-    public void setSpendAmount(String spendAmount) {
+    public void setSpendAmount(double spendAmount) {
         this.spendAmount = spendAmount;
     }
 

@@ -2,81 +2,97 @@ package my.edu.utar.ezytravelnolegacy;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+
+
 
 import android.content.Intent;
+
 import android.os.Bundle;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+
 import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Date;
+
 
 
 public class Spending extends AppCompatActivity {
 
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference reference;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spending);
+        setContentView(R.layout.activity_spending_table);
 
-        Button addButton = findViewById(R.id.button3);
-        EditText spendList = findViewById(R.id.listName);
-        EditText spendAmount = findViewById(R.id.spendAmount);
-        EditText spendDes = findViewById(R.id.spendDescription);
-        CalendarView spendDate = findViewById(R.id.calendarView);
-        Button checkSpending = findViewById(R.id.button);
-
-        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
-        String selectedDate = sdf.format(new Date(spendDate.getDate()));
-
-
-        addButton.setOnClickListener(new View.OnClickListener() { // add new card
+        Button addButton=findViewById(R.id.add_button);
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firebaseDatabase = FirebaseDatabase.getInstance();
-                reference = firebaseDatabase.getReference("Spending");
-
-                String sName = spendList.getText().toString();
-                String sDescription = spendDes.getText().toString();
-                String sAmount = spendAmount.getText().toString();
-                String sDate = selectedDate;
-
-                spendingHelper helperClass= new spendingHelper(sName,sDescription,sAmount, sDate);
-
-                reference.child(sDate).setValue(helperClass);
-                Toast.makeText(Spending.this, "Added New Spending",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Spending.this, spendingTable.class);
+                startActivity(intent);
             }
         });
 
-        checkSpending.setOnClickListener(new View.OnClickListener() {
+        ArrayList<String> list1 = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
+
+
+        Spinner spinTrip =  findViewById(R.id.getTrip);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, list1);
+        getTrip_spinner(list1, aa);
+        aa.setDropDownViewResource(R.layout.dropdown_item);
+        spinTrip.setAdapter(aa);
+
+        Spinner spinDate =  findViewById(R.id.getDate);
+        ArrayAdapter bb = new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, list2);
+        spinDate.setAdapter(bb);
+
+
+
+        spinTrip.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                Intent checkSpend = new Intent(Spending.this, spendingTable.class);
-                startActivity(checkSpend);
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                getDate_spinner(list2, bb, spinTrip);
+                bb.setDropDownViewResource(R.layout.dropdown_item);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
+
+        spinDate.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                getSpendingData(spinTrip,spinDate);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
@@ -87,7 +103,7 @@ public class Spending extends AppCompatActivity {
         // Perform item selected listener
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected( MenuItem item) {
+            public boolean onNavigationItemSelected(MenuItem item) {
 
                 switch (item.getItemId()) {
                     case R.id.nav_spending:
@@ -107,7 +123,107 @@ public class Spending extends AppCompatActivity {
                 }
                 return false;
             }
+
         });
     }
+
+    private void getTrip_spinner(ArrayList<String> list1, ArrayAdapter aa) {
+        DatabaseReference mDatabase;
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Spending");
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list1.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
+                    String result = dataSnapshot.getKey().toString();
+
+                    list1.add(result);
+
+                }
+                aa.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Spending.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void getDate_spinner(ArrayList<String> list2, ArrayAdapter bb, Spinner spinTrip) {
+
+        String selected_spinner = spinTrip.getSelectedItem().toString();
+
+
+        DatabaseReference mDatabase;
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Spending").child(selected_spinner);
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                list2.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
+                    String result = dataSnapshot.getKey().toString();
+
+                    list2.add(result);
+
+                }
+                bb.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Spending.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+    private void getSpendingData(Spinner spinTrip, Spinner spinDate) {
+
+        String selected_spinner = spinTrip.getSelectedItem().toString();
+        String selected_spinner2 = spinDate.getSelectedItem().toString();
+
+
+        DatabaseReference mDatabase;
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Spending").child(selected_spinner).child(selected_spinner2);
+
+        mDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String result1 = "";
+                String result2 ="";
+                Double result3 = 0.0;
+                for (DataSnapshot data : snapshot.getChildren()) {
+
+                    result1 += data.getKey().toString() + "\n";
+                    result2 += data.getValue().toString() + "\n";
+                    result3 += data.getValue(Double.class);
+
+                    TextView showSpending = findViewById(R.id.showSpending);
+                    showSpending.setText(result1);
+                    TextView showPrice = findViewById(R.id.showPrice);
+                    showPrice.setText(result2);
+                    TextView showTotal = findViewById(R.id.spendTotal);
+                    showTotal.setText(result3.toString());
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Spending.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+
+
 
 }
