@@ -63,5 +63,6 @@ dependencies {
     implementation 'com.huawei.hms:image-render-fallback:1.0.3.302'
     implementation 'com.huawei.hms:image-render:1.0.3.303'
     implementation 'com.huawei.hms:maps:5.2.0.301'
+    implementation 'com.huawei.hms:location:5.1.0.301'
 }
 apply plugin: 'com.huawei.agconnect'

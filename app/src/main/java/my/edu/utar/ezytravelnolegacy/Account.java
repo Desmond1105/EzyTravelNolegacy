@@ -78,6 +78,15 @@ public class Account extends AppCompatActivity {
             }
         });
 
+        Button map = findViewById(R.id.map);
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent int1 = new Intent(Account.this, SupportMapDemoActivity.class);
+                startActivity(int1);
+            }
+        });
+
 // Initialize and assign variable
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
 

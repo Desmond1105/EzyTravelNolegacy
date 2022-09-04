@@ -118,7 +118,7 @@ public class TripActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
 
         // Set Account selected
-        bottomNavigationView.setSelectedItemId(R.id.nav_spending);
+        bottomNavigationView.setSelectedItemId(R.id.nav_planner);
 
         // Perform item selected listener
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
@@ -137,7 +137,7 @@ public class TripActivity extends AppCompatActivity {
                         startActivity(int2);
                         return true;
                     case R.id.nav_spending:
-                        Intent int3 = new Intent(TripActivity.this, spendingTable.class);
+                        Intent int3 = new Intent(TripActivity.this, Spending.class);
                         startActivity(int3);
                         return true;
                 }

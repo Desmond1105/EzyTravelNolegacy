@@ -175,19 +175,6 @@ public class spendingTable extends AppCompatActivity {
                     }
                 });
 
-//                mDatabase.child("CheckList").child(sp.getSelectedItem().toString()).child(spinner.getSelectedItem().toString())
-//                String cmp = data.getKey();
-
-//                if(item.getText().toString().equals(cmp)){
-//                    mDatabase.child("CheckList").child(sp.getSelectedItem().toString())
-//                            .child(spinner.getSelectedItem().toString()).child(item.getText().toString())
-//                            .removeValue();
-//                    Toast.makeText(Checklist3.this, "Deleted", Toast.LENGTH_SHORT).show();
-//                    break;
-//                }
-//                else{
-//                    Toast.makeText(Checklist3.this, "Item not Found, Delete Unsuccessfully", Toast.LENGTH_SHORT).show();
-//                }
             }
 
         });

@@ -222,8 +222,4 @@ public class Spending extends AppCompatActivity {
         });
 
     }
-
-
-
-
 }
